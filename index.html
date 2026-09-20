@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>document.documentElement.classList.add('js');</script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Riya Patel // Cybersecurity Portfolio</title>
-<meta name="description" content="Riya Patel — SOC Analyst & Detection Engineer. From threat detection to response." />
+<meta name="description" content="Riya Patel, SOC Analyst & Detection Engineer. From threat detection to response." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=JetBrains+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -149,8 +150,9 @@
   .skill-name { font-family: var(--serif); font-size: 17px; font-weight: 400; }
   .skill-pct { font-family: var(--mono); font-size: 11px; color: var(--muted); }
   .skill-bar { height: 2px; background: var(--hairline); position: relative; overflow: hidden; }
-  .skill-bar::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: var(--lvl, 0%); background: var(--fg); transform: scaleX(0); transform-origin: left; transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1); }
-  .skill-item.visible .skill-bar::after { transform: scaleX(1); }
+  .skill-bar::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: var(--lvl, 0%); background: var(--fg); transform: scaleX(1); transform-origin: left; transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1); }
+  html.js .skill-bar::after { transform: scaleX(0); }
+  html.js .skill-item.visible .skill-bar::after { transform: scaleX(1); }
 
   .timeline { display: flex; flex-direction: column; gap: 48px; }
   .timeline-item { display: grid; grid-template-columns: 200px 1fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid var(--hairline); align-items: start; }
@@ -249,8 +251,9 @@
 
   footer { padding: 40px; border-top: 1px solid var(--hairline); display: flex; justify-content: space-between; align-items: center; font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.02em; flex-wrap: wrap; gap: 16px; }
 
-  .reveal { opacity: 0; transform: translateY(24px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal { opacity: 1; transform: none; }
+  html.js .reveal { opacity: 0; transform: translateY(24px); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); }
+  html.js .reveal.visible { opacity: 1; transform: translateY(0); }
 
   @media (max-width: 820px) {
     nav { padding: 16px 20px; gap: 12px; }
@@ -312,10 +315,10 @@
   <p class="hero-tagline reveal">Detection, <em>engineered.</em><br/><span style="display:block; margin-top:16px; font-size:0.55em; color:var(--muted); font-style:italic;">If it fires twice, I automate it.</span></p>
 
   <p class="hero-desc reveal">
-    Cybersecurity professional with 2+ years in SOC operations, detection engineering, SIEM
+    Cybersecurity professional with nearly 3 years in SOC operations, detection engineering, SIEM
     administration and incident response. I build MITRE ATT&amp;CK-aligned detections, lead
     end-to-end investigations, and write the Python that keeps the SOC running while I sleep.
-    Fortinet-certified; currently working through Blue Team Level 1 (BTL1).
+    Fortinet- and BTL1-certified.
   </p>
 
   <div class="hero-cta reveal">
@@ -347,12 +350,12 @@
     </p>
     <p style="margin-bottom: 20px;">
       On the platform side, I've <strong style="color: var(--fg); font-weight: 500;">uplifted our
-      Graylog Enterprise to behave close to Graylog Security</strong> — integrating MITRE
+      Graylog Enterprise to behave close to Graylog Security</strong>, integrating MITRE
       ATT&amp;CK, UEBA and ML workflows, plus Claude- and ChatGPT-assisted investigation. It's
       the kind of work that saves license spend while levelling up the SOC.
     </p>
     <p style="margin-bottom: 20px;">
-      Before Casepoint I was an L1 SOC Analyst at Techowl Infosec — triaging alerts across
+      Before Casepoint I was an L1 SOC Analyst at Techowl Infosec, triaging alerts across
       multiple client environments, running Atomic Red Team exercises, and keeping 500+
       endpoints patched to ~99% compliance. Earlier I interned in data science at Exposys Data
       Labs, which is where my comfort with Python, analytics and AI-assisted workflows comes from.
@@ -360,8 +363,8 @@
     <p>
       I care about the boring operational problems that make or break a SOC: signal-to-noise
       ratio, log source coverage, runbook consistency, and automating anything a human shouldn't
-      be doing twice. Currently working through
-      <strong style="color: var(--fg); font-weight: 500;">Blue Team Level 1 (BTL1)</strong>
+      be doing twice. Certified
+      <strong style="color: var(--fg); font-weight: 500;">Blue Team Level 1 (BTL1)</strong>,
       and expanding into web app pentesting and purple-team work.
     </p>
   </div>
@@ -387,8 +390,11 @@
     <div class="skill-group reveal">
       <h3>siem &amp; security tooling</h3>
       <div class="skill-item" style="--lvl: 92%"><span class="skill-name">Graylog (Enterprise)</span><span class="skill-pct">92</span><span class="skill-bar"></span></div>
-      <div class="skill-item" style="--lvl: 82%"><span class="skill-name">Cortex XDR (BIOC/IOC)</span><span class="skill-pct">82</span><span class="skill-bar"></span></div>
+      <div class="skill-item" style="--lvl: 80%"><span class="skill-name">Splunk</span><span class="skill-pct">80</span><span class="skill-bar"></span></div>
+      <div class="skill-item" style="--lvl: 90%"><span class="skill-name">Cortex XDR (BIOC/IOC + Response)</span><span class="skill-pct">90</span><span class="skill-bar"></span></div>
       <div class="skill-item" style="--lvl: 80%"><span class="skill-name">Wazuh</span><span class="skill-pct">80</span><span class="skill-bar"></span></div>
+      <div class="skill-item" style="--lvl: 78%"><span class="skill-name">Wireshark</span><span class="skill-pct">78</span><span class="skill-bar"></span></div>
+      <div class="skill-item" style="--lvl: 75%"><span class="skill-name">Autopsy</span><span class="skill-pct">75</span><span class="skill-bar"></span></div>
       <div class="skill-item" style="--lvl: 65%"><span class="skill-name">CrowdStrike Falcon</span><span class="skill-pct">65</span><span class="skill-bar"></span></div>
       <div class="skill-item" style="--lvl: 75%"><span class="skill-name">FortiSIEM</span><span class="skill-pct">75</span><span class="skill-bar"></span></div>
       <div class="skill-item" style="--lvl: 75%"><span class="skill-name">KnowBe4</span><span class="skill-pct">75</span><span class="skill-bar"></span></div>
@@ -429,7 +435,7 @@
     <div class="timeline-item reveal">
       <div class="timeline-meta">
         <span class="timeline-tag current">current</span>
-        <span class="timeline-year">2025 — Present</span>
+        <span class="timeline-year">2025 – Present</span>
       </div>
       <div>
         <h3 class="timeline-title">Security Administrator · SOC Operations</h3>
@@ -439,10 +445,10 @@
           production, QA and enterprise environments.
           <ul>
             <li>Design MITRE ATT&amp;CK-aligned detection use cases across Azure AD, M365, Windows and Linux</li>
-            <li>Uplifted Graylog Enterprise with MITRE integration, UEBA, ML and AI-assisted investigation — closing the gap to Graylog Security</li>
+            <li>Uplifted Graylog Enterprise with MITRE integration, UEBA, ML and AI-assisted investigation, closing the gap to Graylog Security</li>
             <li>Authored 85+ production detection queries and 5+ Python automations for SOC operations</li>
             <li>Lead end-to-end IR including web-shell compromise and Cortex XDR tampering investigations</li>
-            <li>SIEM tuning and alert optimization — reduced false positives by ~30–40%</li>
+            <li>SIEM tuning and alert optimization, reduced false positives by ~30–40%</li>
             <li>Create BIOCs, IOCs and IR playbooks in Cortex XDR</li>
             <li>Integrate Claude / ChatGPT with Graylog for AI-assisted investigation</li>
             <li>Deliver KnowBe4 awareness trainings and run internal phishing simulations</li>
@@ -458,7 +464,7 @@
     <div class="timeline-item reveal">
       <div class="timeline-meta">
         <span class="timeline-tag">1+ yr</span>
-        <span class="timeline-year">Jan 2024 — 2025</span>
+        <span class="timeline-year">Jan 2024 – 2025</span>
       </div>
       <div>
         <h3 class="timeline-title">SOC Analyst L1</h3>
@@ -508,7 +514,7 @@
         <div class="timeline-org">Exposys Data Labs</div>
         <div class="timeline-desc">
           Developed and fine-tuned machine learning models for predictive analytics using Python
-          — scikit-learn, pandas, NumPy — and presented findings to stakeholders through clear
+          (scikit-learn, pandas, NumPy) and presented findings to stakeholders through clear
           visualizations. The foundation for my current interest in AI-assisted log analysis.
         </div>
         <div class="timeline-highlights">
@@ -524,7 +530,7 @@
   <h2 class="reveal">Real <em>incidents</em>,<br/>real <em>investigations</em>.</h2>
 
   <p style="max-width: 720px; color: var(--muted); margin-bottom: 48px; font-size: 15px; line-height: 1.7;" class="reveal">
-    Anonymized case studies from my SOC work — organizational identifiers, internal hosts,
+    Anonymized case studies from my SOC work, organizational identifiers, internal hosts,
     attacker IPs and specific paths have been redacted. Full technical detail available on
     request under NDA.
   </p>
@@ -538,7 +544,7 @@
         <span class="case-role">Role: Lead Investigator</span>
       </div>
       <div>
-        <h3 class="case-title">Web Shell Compromise — Enterprise IIS Platform</h3>
+        <h3 class="case-title">Web Shell Compromise: Enterprise IIS Platform</h3>
         <p class="case-desc">
           Led end-to-end response to a <strong>web shell compromise</strong> on an enterprise IIS
           platform. Investigation confirmed data exfiltration via a <code>.php</code> shell
@@ -573,11 +579,11 @@
         <span class="case-role">Role: Sole Investigator</span>
       </div>
       <div>
-        <h3 class="case-title">36-Day Distributed Credential Attack — M365 Shared Mailboxes</h3>
+        <h3 class="case-title">36-Day Distributed Credential Attack: M365 Shared Mailboxes</h3>
         <p class="case-desc">
           Investigated a <strong>36-day distributed credential attack</strong> against 9 Microsoft
           365 mailboxes using legacy SMTP authentication. Correctly classified as distributed
-          brute-force / credential stuffing — not password spray — based on target-repetition
+          brute-force / credential stuffing (not password spray) based on target-repetition
           pattern. Identified the canonical <code>BAV2ROPC</code> user-agent fingerprint and an
           Azure-hosted attacker IP abusing Microsoft's own infrastructure to evade reputation-based blocks.
         </p>
@@ -611,7 +617,7 @@
         <span class="case-role">Role: Lead Investigator</span>
       </div>
       <div>
-        <h3 class="case-title">Telerik RAU Handler Threat Hunt — Multi-Server</h3>
+        <h3 class="case-title">Telerik RAU Handler Threat Hunt: Multi-Server</h3>
         <p class="case-desc">
           <strong>Graylog-driven threat hunt</strong> across 7 web servers following anomalous
           activity. Mapped behaviour to <strong>CVE-2019-18935</strong> (.NET deserialization RCE,
@@ -645,11 +651,11 @@
         <span class="case-role">Role: Investigator · Blue Team</span>
       </div>
       <div>
-        <h3 class="case-title">EDR Tampering &amp; SYSTEM Impersonation — Cortex XDR</h3>
+        <h3 class="case-title">EDR Tampering &amp; SYSTEM Impersonation: Cortex XDR</h3>
         <p class="case-desc">
           Investigated an <strong>advanced EDR tampering attempt</strong> where the Cortex XDR
           agent was disabled via <code>cyserver.exe /serviceremoveppl</code> without the
-          supervisor password — a PPL-protected-service bypass via SYSTEM token impersonation.
+          supervisor password, a PPL-protected-service bypass via SYSTEM token impersonation.
           Correlated Cortex timeline with Windows Security Logs to reconstruct the attack chain:
           WMI remote execution → rundll32 loading an MSI-dropped DLL → unsigned msiexec payload →
           EDR tamper.
@@ -662,7 +668,7 @@
         </div>
         <p class="case-desc" style="margin-top:12px;">
           Attributed privilege abuse to <code>SeDebugPrivilege</code>,
-          <code>SeLoadDriverPrivilege</code> and <code>SeImpersonatePrivilege</code> — the exact
+          <code>SeLoadDriverPrivilege</code> and <code>SeImpersonatePrivilege</code>, the exact
           combination needed to tamper with a PPL-protected agent. Flagged Event ID 5379
           (Credential Manager reads) minutes before the tamper as classic pre-exfiltration
           credential staging.
@@ -689,7 +695,7 @@
           <strong>geolocation data accuracy issue</strong>.
         </p>
         <p class="case-desc">
-          Produced clean false-positive disposition and — more importantly — <strong>engineered
+          Produced clean false-positive disposition and, more importantly, <strong>engineered
           a new detection rule</strong> to monitor any future non-India/US sign-ins as standing
           content. The triage → root cause → new detection loop in action.
         </p>
@@ -737,10 +743,10 @@
     <div class="project reveal">
       <div class="project-num">/ 01</div>
       <div>
-        <h3 class="project-title">Graylog Enterprise Uplift — MITRE / UEBA / ML / AI</h3>
+        <h3 class="project-title">Graylog Enterprise Uplift: MITRE / UEBA / ML / AI</h3>
         <p class="project-desc">
           Platform-engineering project that <strong>uplifted our Graylog Enterprise deployment to
-          operate close to the Graylog Security tier</strong> — closing a major capability gap
+          operate close to the Graylog Security tier</strong>, closing a major capability gap
           without the license step-up. Integrated MITRE ATT&amp;CK content, UEBA analytics, and
           ML-assisted detection. Built <strong>Claude and ChatGPT integrations</strong> directly
           into investigation workflows so analysts can query logs and get triage support
@@ -761,25 +767,25 @@
           healthy and analysts out of the weeds:
         </p>
         <p class="project-desc" style="margin-bottom: 8px;">
-          → <code>graylog_beat_spike.py</code> — scheduled daily; emails
+          → <code>graylog_beat_spike.py</code>, scheduled daily; emails
           <strong>🚨 Spike Detected</strong> reports with per-source breakdowns (Winlogbeat: event
           IDs, processes, log levels; Filebeat: site, URI stream, URI query, logfile path) or
           <strong>✅ All Clear</strong> when traffic is normal.
         </p>
         <p class="project-desc" style="margin-bottom: 8px;">
-          → <code>sidecar_assignments.py</code> — automated config assignment across multiple
+          → <code>sidecar_assignments.py</code>, automated config assignment across multiple
           Graylog sidecars, eliminating manual per-collector setup.
         </p>
         <p class="project-desc" style="margin-bottom: 8px;">
-          → <code>silent_source_detector.py</code> — alerts on dead / silent / reduced log
+          → <code>silent_source_detector.py</code>, alerts on dead / silent / reduced log
           sources (e.g. <em>6 dead, 257 silent, 82 reduced</em>) so ingestion gaps don't turn into
           detection gaps.
         </p>
         <p class="project-desc" style="margin-bottom: 8px;">
-          → <code>auditlog.py</code> — audit log fetcher for compliance and investigation.
+          → <code>auditlog.py</code>, audit log fetcher for compliance and investigation.
         </p>
         <p class="project-desc">
-          → <code>graylog_user_activity_monitor.py</code> — rolling 24h window user-activity
+          → <code>graylog_user_activity_monitor.py</code>, rolling 24h window user-activity
           reporting for anomaly detection.
         </p>
         <div class="project-tags"><span>Python</span><span>Graylog API</span><span>Automation</span><span>Cron</span><span>Platform Health</span></div>
@@ -807,11 +813,11 @@
     <div class="project reveal">
       <div class="project-num">/ 04</div>
       <div>
-        <h3 class="project-title">Cortex XDR Content — BIOCs, IOCs &amp; IR Playbooks</h3>
+        <h3 class="project-title">Cortex XDR Content: BIOCs, IOCs &amp; IR Playbooks</h3>
         <p class="project-desc">
           Authored <strong>BIOCs (Behavioral IOCs) and IOCs in Cortex XDR</strong> to extend
           native detection coverage against organization-specific TTPs. Designed
-          <strong>IR playbooks</strong> for Casepoint's response team — phase-gated, role-assigned,
+          <strong>IR playbooks</strong> for Casepoint's response team, phase-gated, role-assigned,
           and tuned to the environment. Directly complements the Cortex tampering investigation
           case study.
         </p>
@@ -824,10 +830,10 @@
       <div class="project-num">/ 05</div>
       <div>
         <h3 class="project-title">
-          <a href="https://hack-parthsharma.github.io/threat-intel/" target="_blank" rel="noopener">Trishul — Security Impact Analysis Module ↗</a>
+          <a href="https://hack-parthsharma.github.io/threat-intel/" target="_blank" rel="noopener">Trishul: Security Impact Analysis Module ↗</a>
         </h3>
         <p class="project-desc">
-          Originated the concept and <strong>built the SIA module</strong> of Trishul — an
+          Originated the concept and <strong>built the SIA module</strong> of Trishul, an
           integrated URL threat-intel + security-impact-analysis platform co-developed with Parth
           Sharma. The SIA module ingests executables, installers and documents; runs hash
           generation and multi-engine reputation checks (VirusTotal, MalwareBazaar, NSRL / CIRCL,
@@ -845,7 +851,7 @@
       <div>
         <h3 class="project-title">MITRE ATT&amp;CK Detection Catalog</h3>
         <p class="project-desc">
-          Personal working reference — <strong>500+ detection use cases</strong> mapped to all 11
+          Personal working reference, <strong>500+ detection use cases</strong> mapped to all 11
           ATT&amp;CK tactics, with Windows Event ID coverage, LOLBins reference, and named
           adversary behaviours (Mimikatz, Kerberoasting, Pass-the-Hash / Pass-the-Ticket, UAC
           bypasses, WMI persistence). Maintained as my operational playbook for detection
@@ -863,7 +869,7 @@
         <p class="project-desc">
           Authored a <strong>cross-platform (Windows + Linux) investigation runbook</strong>
           organized by 7 IR phases. Each action pairs native Windows commands (PowerShell, wmic,
-          wevtutil) with Linux equivalents (ss, systemctl, journalctl, ausearch) — accelerating
+          wevtutil) with Linux equivalents (ss, systemctl, journalctl, ausearch), accelerating
           junior-analyst onboarding and keeping investigations consistent across shifts.
         </p>
         <div class="project-tags"><span>IR</span><span>Runbook</span><span>Windows</span><span>Linux</span><span>Documentation</span></div>
@@ -891,8 +897,8 @@
       <div>
         <h3 class="project-title">PowerShell Threat Detection &amp; Atomic Red Team Simulations</h3>
         <p class="project-desc">
-          Detection logic for suspicious PowerShell execution patterns — encoded commands,
-          download cradles, offensive-tooling signatures — with supporting SIEM dashboards. Ran
+          Detection logic for suspicious PowerShell execution patterns, encoded commands,
+          download cradles, offensive-tooling signatures, with supporting SIEM dashboards. Ran
           Atomic Red Team adversary simulations mapped to MITRE ATT&amp;CK to validate detections
           and drive new use-case development.
         </p>
@@ -909,10 +915,9 @@
 
   <div class="certs-grid">
     <div class="cert reveal">
-      <div class="cert-progress">In Progress</div>
       <div class="cert-cat">Defensive</div>
       <div class="cert-name">BTL1</div>
-      <div class="cert-issuer">Security Blue Team · Blue Team Level 1</div>
+      <div class="cert-issuer">Security Blue Team · Blue Team Level 1 · 2026</div>
     </div>
     <div class="cert reveal">
       <div class="cert-cat">Networking</div>
@@ -938,7 +943,7 @@
 
   <div class="htb-wrap reveal">
     <div class="htb-header">
-      <div class="htb-title">Hack The Box — 25+ labs completed</div>
+      <div class="htb-title">Hack The Box: 25+ labs completed</div>
       <div class="htb-meta">DFIR · SOC · Threat Intel · Web</div>
     </div>
 
@@ -975,13 +980,13 @@
       <div class="timeline-item reveal" style="border-bottom: none; padding-bottom: 0;">
         <div class="timeline-meta">
           <span class="timeline-tag">Degree</span>
-          <span class="timeline-year">2020 — 2024</span>
+          <span class="timeline-year">2020 – 2024</span>
         </div>
         <div>
           <h3 class="timeline-title">B.E., Computer Science</h3>
           <div class="timeline-org">Gujarat Technological University</div>
           <p class="timeline-desc">
-            Undergraduate coursework in computer science fundamentals, systems and networking —
+            Undergraduate coursework in computer science fundamentals, systems and networking,
             with self-directed focus on security, SIEM tooling and detection engineering alongside
             academic projects in ML and IoT (stock-price prediction model, Arduino touchless
             doorbell).
@@ -1012,7 +1017,7 @@
       <h2 style="margin-bottom: 32px;">Let's <em>talk</em>.</h2>
       <p>
         Whether it's a SOC opportunity, a detection engineering role, or a conversation about
-        SIEM tuning and alert quality — my inbox is open.
+        SIEM tuning and alert quality, my inbox is open.
       </p>
       <a href="mailto:riyaptl.connect@gmail.com" class="contact-email">riyaptl.connect@gmail.com</a>
       <div style="margin-top: 20px; font-family: var(--mono); font-size: 12px; color: var(--muted); letter-spacing: 0.02em;">
@@ -1054,17 +1059,24 @@
     document.documentElement.setAttribute('data-theme', next);
   }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-  document.querySelectorAll('.reveal, .skill-item').forEach(el => observer.observe(el));
+  const revealAll = () => document.querySelectorAll('.reveal, .skill-item').forEach(el => el.classList.add('visible'));
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal, .skill-item').forEach(el => observer.observe(el));
+  } else {
+    revealAll();
+  }
 
   window.addEventListener('load', () => {
     document.querySelectorAll('.hero .reveal').forEach((el, i) => {
       setTimeout(() => el.classList.add('visible'), 120 + i * 120);
     });
+    // Failsafe: nothing stays hidden even if the observer misfires
+    setTimeout(revealAll, 1200);
   });
 
   function handleSubmit(e) {
